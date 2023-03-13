@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm[toml]"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pegasuslm"
+dynamic = ["version"]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+  "torch~=2.1.0",
+  "transformers",
+  "datasets~=2.10",
+  "evaluate",
+  "accelerate",
+  "neologdn",
+  "prefetch-generator",
+  "sentencepiece",
+  "scikit-learn",
+  "tensorboard",
+]
+
+[tool.setuptools.packages.find]
+include = ["pegasuslm*"]
+
+[tool.setuptools_scm]
+write_to = "pegasuslm/_version.py"
